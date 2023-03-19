@@ -1,69 +1,288 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+/* #3d3d3d black */
+/* #44bd32 green color  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+  color : #3d3d3d;
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  padding : 0 150px;
+}
+.nav-bar{
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+  padding : 32px 150px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.136);
+  overflow: hidden;
+  position : fixed;
+  top : 0;
+  width : 100%;
+}
+h2.logo{
+  margin-left : -125px;
+  font-size: 28px;
+  letter-spacing: .3px;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  padding-right: 15px;
+  position: relative;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+h2.logo::after{
+  content: '';
+  border-right: 1px solid rgba(128, 128, 128, 0.136);
+  margin-left: 15px;
+  position: absolute;
+  height : 180px;
+  top : -80px;
 }
-a:hover {
-  color: #535bf2;
+.delivery-time p{
+  letter-spacing: .5px;
+  font-size: 16px;
+  font-weight: 600;
+  color : black;
+  text-transform: capitalize;
+  color : black;
+  font-size: 18px;
 }
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.dummy{
+  width : 100%;
+  height : 100%;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.048);
+  border: 1px solid rgba(128, 128, 128, 0.205);
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.header-input-field{
+  width : 55%;
+  height : 50px;
+  position: relative;
+  overflow: hidden;
+  /* border : 2px solid red; */
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.header-input-field .glass{
+  position: absolute;
+  top :17px;
+  left :15px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  color : #3d3d3d;
 }
-button:hover {
-  border-color: #646cff;
+.t{
+  position : absolute;
+  top : 12px; 
+  left : 44px;
+  letter-spacing: .6px;
+  font-size: 14px;
+  font-weight : 200;
+  color : rgba(128, 128, 128, 0.973);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.text1{
+  animation-name : animate1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.text2{
+  animation-name : animate2;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-delay: 1.2s;
+  visibility: hidden;
+}
+@keyframes animate1{
+  0%{
+    transform: translateY(40px);
+  }50%{
+    transform: translateY(2px);
+  }100%{
+    transform: translateY(-40px);
+  }
+}
+@keyframes animate2{
+  0%{
+    transform: translateY(40px);
+    visibility: visible;
+  }50%{
+    transform: translateY(2px);
+  }100%{
+    transform: translateY(-40px);
+  }
+}
+.header-input-field input{
+  display: block;
+  width : 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding : 14px 45px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: capitalize;
+  background-color: rgba(128, 128, 128, 0.048);
+  border: 1px solid rgba(128, 128, 128, 0.205);
+}
+.login-btn{
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.cart-btn{
+  width : 125px;
+  height : 50px;
+  border-radius: 10px;
+  margin-right : -95px;
+}
+.cart-btn button{
+  display: block;
+  width: 100%;
+  height : 100%;
+  text-transform: capitalize;
+  background-color: #44bd32;
+  color : white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 5px;
+  font-weight : 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cart-btn p{
+  color : white;
+}
+.cart-btn .cart-icon{
+  color : white;
+  font-size: 18px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+/* ########################## brand styling ########## */
+.new-brand{
+  color : white;
+  border-radius: 35px;
+  margin-top : 135px;
+  height : 220px;
+  /* background-color: #3d3d3d; */
+  /* background: url("https://static.winenews.it/2018/08/RomaneeConti.jpg"); */
+  object-fit: cover;
+  object-position: center;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  display : flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.white-btn{
+  border : none;
+  color :#3d3d3d;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  outline: none;
+  border-radius: 5px;
+  padding : 6px 20px;
+  margin-top: 8px;
+  cursor: pointer;
+  background-color: white;
+  background-color: rgba(128, 128, 128, 0.425);
+  color : white;
+  font-weight: 300;
+  font-size: 12px;
+}
+.new-brand .box1{
+  color : white;
+  width : 66%;
+  /* background-color: #1b1818; */
+  background-image: linear-gradient( 95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+  background-image: linear-gradient( 95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  /* https://thewhisky.s3.ap-south-1.amazonaws.com/sites/default/files/whiskey-indian-iris-single-malt-blended-scotch.png */
+  /* https://thewhisky.s3.ap-south-1.amazonaws.com/sites/default/files/whiskey-indian-iris-single-malt-blended-scotch.png */
+  padding: 30px;
+}
+.new-brand .box2{
+  overflow: hidden;
+  width : 40%;
+  height: 100%;
+  object-fit: contain;
+  /* background-image: linear-gradient( 95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% ); */
+}
+.new-brand .box2 img{
+  width : 100%;
+  object-position: center;
+  /* object-position: top; */
+  object-fit: contain;
+}
+.new-brand .box1 h2{
+  font-size: 42px;
+}
+.new-brand p{
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: .5px;
+  font-weight: 100;
+  text-transform: capitalize;
+  line-height: 24px;
+  width: 90%;
+  /* color : white; */
+  color : gray;
+}
+
+
+/* category styling bro  */
+.category-card{
+  /* border : 2px solid red; */
+  margin-top : 35px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.cat-name{
+  /* border : 2px solid red; */
+  width : 130px;
+  height : 130px;
+  cursor: pointer;
+  margin: 15px 25px;
+  padding: 5px;
+  transition: all .2s ease-in-out;
+}
+.cat-name:hover{
+  transform: scale(1.05);
+}
+.cat-name .img{
+  /* border : 2px solid red; */
+  width : 100%;
+  height : 85%;
+  padding: 6px;
+}
+.cat-name img{
+  /* border : 2px solid green; */
+  display: block;
+  width : 100%;
+  height : 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  /* padding: 5px; */
+}
+
+.cat-name p{
+  /* border: 2px solid orange; */
+  width:80%;
+  letter-spacing: .5px;
+  font-size: 12px;
+  /* line-height: 22px; */
+  margin-top: 4px;
+  text-transform: capitalize;
+  text-align: center;
+  margin : 3px auto;
 }
