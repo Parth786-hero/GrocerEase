@@ -5,7 +5,7 @@ function NewBrand(){
             <div className="container">
                 <div className="new-brand">
                     <div className="box1">
-                        <h2>The most expensive <span style={{color :"white"}}>liquor .</span></h2>
+                        <h2 style={{color : "white"}}>The most expensive <span style={{color :"white"}}>liquor .</span></h2>
                         <p> an alcoholic drink typically made from fermented grapes. Yeast consumes the sugar in the grapes and converts it to ethanol and carbon dioxide, releasing heat in the process. Different varieties of grapes and strains of yeasts are major factors in different styles of wine. </p>
                         <button className="white-btn">order now</button>
                     </div>

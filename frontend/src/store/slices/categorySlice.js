@@ -10,8 +10,6 @@ const categorySlice = createSlice({
         }
     }
 });
-// console.log(categorySlice.getInitialState());
-
 export default categorySlice.reducer;
 const {add} = categorySlice.actions;
 export {add};

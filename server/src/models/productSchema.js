@@ -7,23 +7,6 @@ const productSchema = new mongoose.Schema({
         required : true,
         minlength : 3
     },
-    imgUrl : {
-        type : String,
-        required : true
-    },
-    weightNum : {
-        type : Number,
-        required : true,
-        validate(val){
-            if(val <= 0){
-                throw new Error("Invalid weight value reveived .....");
-            }
-        }
-    },
-    weightUnit : {
-        type : String,
-        required : true
-    },
     price : {
         type : Number,
         required : true,
@@ -33,6 +16,20 @@ const productSchema = new mongoose.Schema({
             }
         }
     },
+    img : {
+        type : String,
+        required : true
+    },
+    num : {
+        type : String,
+        required : true,
+        
+    },
+    unit : {
+        type : String,
+        required : true
+    },
+    
     category : {
         type : String,
         required : true,

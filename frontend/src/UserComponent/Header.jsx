@@ -1,4 +1,18 @@
+import { useDispatch, useSelector } from "react-redux";
+import {change} from '../store/slices/authenticateSlice';
+import { show } from "../store/slices/cartPage";
 function Header(){
+    // const state = useSelector(state=>state.amount);
+    const productList = useSelector(state=>state.product);
+    // console.log(productList);
+    
+    const dispatch = useDispatch();
+    function trigger(){
+        dispatch(change(true));
+    }
+    function trigger2(){
+        dispatch(show(true));
+    }
     return(
         <>
             <div className="nav-bar container">
@@ -13,11 +27,16 @@ function Header(){
                     {/* <input type="text" value=""/> */}
                     <p className="dummy"></p>
                 </div>
-                <p className="login-btn">login</p>
+                <p className="login-btn" onClick={trigger}>login</p>
                 <div className="cart-btn">
-                    <button>
+                    <button onClick={trigger2}>
                         <p><i className="fa-solid cart-icon fa-cart-shopping"></i></p>
-                        <p>my cart</p>
+                        {
+                            productList.length  ? <div className="my-bill">
+                                <p><span style={{color : "white"}}>{productList.length}</span> items</p>
+                                <p>in cart </p>
+                            </div> : <p>my cart</p>
+                        }
                     </button>
                 </div>
             </div>
